@@ -1,3 +1,5 @@
+# noinspection SqlNoDataSourceInspectionForFile
+
 -- name	continent	area	population	gdp
 -- Afghanistan	Asia	652230	25500100	20343000000
 -- Albania	Europe	28748	2831741	12960000000
@@ -20,12 +22,26 @@ WHERE population > (
 
 
 SELECT name
-FROM world
-WHERE continent = 'Europe' AND gdp / population > (
-                           SELECT gdp / population
-                           FROM world
-                           WHERE name = 'United Kingdom'
+  FROM world
+ WHERE continent = 'Europe'
+   AND gdp / population > (
+        SELECT gdp / population
+          FROM world
+         WHERE name = 'United Kingdom'
 )
+
+#  List the name and continent of countries in the continents containing either Argentina or Australia. Order by name of the country.
+
+SELECT name, continent
+FROM world
+WHERE continent IN
+      (SELECT continent
+       FROM world
+       WHERE name IN ('Australia', 'Argentina'))
+ORDER BY name ASC
+
+
+
 
 
 

@@ -93,5 +93,11 @@ SELECT continent, name
          FROM world AS world_y
         WHERE world_x.continent = world_y.continent)
 
+# Find the continents where all countries have a population <= 25000000. Then find the names of the countries associated with these continents. Show name, continent and population.
 
-
+SELECT name, continent, population
+ FROM world AS world_x
+ WHERE
+    (SELECT MAX(world_y.population)
+       FROM world AS world_y
+      WHERE world_y.continent = world_x.continent) <= 25000000

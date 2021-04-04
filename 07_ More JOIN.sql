@@ -39,3 +39,11 @@ SELECT id
  SELECT id
   FROM movie
  WHERE title = 'Casablanca'
+
+# 6.
+# Obtain the cast list for 'Casablanca'
+
+SELECT name
+  FROM actor
+      JOIN casting ON id = actorID
+      WHERE movieid = 11768

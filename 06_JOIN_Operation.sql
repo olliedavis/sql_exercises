@@ -38,4 +38,15 @@ SELECT matchid, player
 
 SELECT id,stadium,team1,team2
   FROM game
- WHERE id = 1012
+ WHERE id = 1012#
+
+# 3.
+# The code below shows the player (from the goal) and stadium name (from the game table) for every goal scored.
+# SELECT player,stadium
+# FROM game JOIN goal ON (id=matchid)
+# Modify it to show the player, teamid, stadium and mdate for every German goal.
+
+SELECT player, teamid, stadium, mdate
+  FROM game
+  JOIN goal ON id = matchid
+ WHERE teamid = 'ger'

@@ -1,1 +1,1 @@
--- sql_exercises
+-- SQL Exercises from SQLZoo.net

@@ -18,3 +18,10 @@ SELECT yr
   FROM movie
  WHERE title = 'Citizen Kane'
 
+# 3.
+# List all of the Star Trek movies, include the id, title and yr. Order results by year.
+
+  SELECT id, title, yr
+    FROM movie
+   WHERE title LIKE 'Star Trek%'
+ORDER BY yr ASC

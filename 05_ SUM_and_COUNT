@@ -19,5 +19,11 @@ SELECT SUM(population)
 SELECT DISTINCT continent
   FROM world
 
+# Give the total GDP of Africa
+
+SELECT SUM(gdp)
+  FROM world
+ WHERE continent = 'Africa'
+
 
 

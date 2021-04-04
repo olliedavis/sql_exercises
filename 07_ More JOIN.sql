@@ -47,3 +47,11 @@ SELECT name
   FROM actor
       JOIN casting ON id = actorID
       WHERE movieid = 11768
+
+# 7.
+# Obtain the cast list for the film 'Alien'
+SELECT name
+  FROM actor
+        JOIN casting ON actor.id = actorID
+        JOIN movie ON movieid = movie.id
+       WHERE title = 'Alien'

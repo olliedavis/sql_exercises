@@ -55,3 +55,10 @@ SELECT name, COALESCE(mobile, '07986 444 2266') AS mobile
     SELECT teacher.name, COALESCE(dept.name, 'None')
       FROM teacher
  LEFT JOIN dept ON dept = dept.id
+
+ -- 7
+
+--  Use COUNT to show the number of teachers and the number of mobile phones.
+
+SELECT COUNT(name), COUNT(mobile)
+  FROM teacher
